@@ -8,7 +8,7 @@ class ActiveCity extends Component {
 
   render() {
     return (
-      <div>
+      <div className="active-city">
         <h3>Paris</h3>
         <p>16 Villa Gaudelet, 75011 Paris</p>
         <img src="https://kitt.lewagon.com/placeholder/cities/paris" width="100%" />
