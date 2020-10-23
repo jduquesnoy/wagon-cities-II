@@ -32,20 +32,34 @@ const cities = [
 
 class App extends Component { 
   constructor(props) { 
-  super(props);
+    super(props);
 
-  
+    this.state = {
+    cities: cities,
+    selectedCity: null,
+    }
   }
+  selectCity = (city) => {
+    this.setState({
+      selectedCity: city
+    });
+  }
+
   
   render() {
     return (
       <div className="app">
         <CityList cities={cities} />
-        <ActiveCity></ActiveCity>
+        <ActiveCity city={this.selectCity}/>
      </div>
     );
   }
 }
+
+
+
+
+export default App;
 
 
 
@@ -57,6 +71,3 @@ class App extends Component {
 //   );
 // };
 
-
-
-export default App;

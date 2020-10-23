@@ -5,13 +5,18 @@ class ActiveCity extends Component {
   super(props);
 
   }
+  handleClick = () => {
+    if (this.props.selectCity) {
+      this.props.selectCity(this.props.city);
+    }
+  }
 
   render() {
     return (
       <div className="active-city">
-        <h3>Paris</h3>
-        <p>16 Villa Gaudelet, 75011 Paris</p>
-        <img src="https://kitt.lewagon.com/placeholder/cities/paris" width="100%" />
+        <h3>{this.props.city.name}</h3>
+        <p>{this.props.city.address}</p>
+        <img src={`https://kitt.lewagon.com/placeholder/cities/${this.props.city.slug}`} width="100%" />
       </div>    
     );
   }

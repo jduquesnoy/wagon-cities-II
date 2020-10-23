@@ -5,17 +5,21 @@ class City extends Component {
  super(props);
   this.state ={cliked:false}
  }
- handleClick = () => {
-  this.setState({ clicked: !this.state.clicked });
-  } 
+  handleClick = () => {
+    this.setState({ clicked: !this.state.clicked });
+    if (this.props.selectCity) {
+      this.props.selectCity(this.props.city);
+
+    };
+  }
  
 
  render() {
-  return (
-  <li
-  className={`list-group-item ${this.state.clicked ? "clicked" : ""}`} onClick={this.handleClick}>{this.props.city.name}</li>
-);
- }
+    return (
+    <li
+    className={`list-group-item ${this.state.clicked ? "clicked" : ""}`} onClick={this.handleClick}>{this.props.city.name}</li>
+    );
+  }
 }
 
 export default City;
