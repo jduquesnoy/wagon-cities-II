@@ -35,33 +35,31 @@ class App extends Component {
     super(props);
 
     this.state = {
-    cities: cities,
-    selectedCity: null,
-    }
+      cities,
+      selectedCity: null,
+    };
   }
+  
   selectCity = (city) => {
     this.setState({
-      selectedCity: city
+      selectedCity: city,
     });
+    console.log(this.state.selectedCity);
+    console.log(activeCity);
   }
 
   
   render() {
     return (
       <div className="app">
-        <CityList cities={cities} />
-        <ActiveCity city={this.selectCity}/>
-     </div>
+        <CityList cities={cities} selectCity={this.selectCity} />
+        <ActiveCity activeCity={this.state.selectedCity} />
+      </div>
     );
   }
 }
 
-
-
-
 export default App;
-
-
 
 // const App = () => {
 //   return (

@@ -11,7 +11,7 @@ class CityList extends Component {
       <div className="cities">
         <ul className= "list-group-item">
             {this.props.cities.map((city) => {
-              return <City key={city.name} city={city}/>;
+              return <City key={city.name} city={city} selectCity={this.props.selectCity}/>;
             })}
         </ul>
       </div> 

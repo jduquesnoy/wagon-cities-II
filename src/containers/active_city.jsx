@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
-
 class ActiveCity extends Component { 
   constructor(props) { 
   super(props);
 
   }
-  handleClick = () => {
-    if (this.props.selectCity) {
-      this.props.selectCity(this.props.city);
-    }
-  }
 
+  
   render() {
+    if (!this.props.activeCity) {
+      return (
+        <div className="active-city">
+          <p>Select a city...</p>
+        </div>
+      );
+    }
     return (
       <div className="active-city">
-        <h3>{this.props.city.name}</h3>
-        <p>{this.props.city.address}</p>
-        <img src={`https://kitt.lewagon.com/placeholder/cities/${this.props.city.slug}`} width="100%" />
-      </div>    
+        <h3>{this.props.activeCity.name}</h3>
+        <p>{this.props.activeCity.address}</p>
+        <img src={`https://kitt.lewagon.com/placeholder/cities/${this.props.activeCity.slug}`} width="100%" />
+      </div> 
     );
+
   }
 }
 
@@ -29,13 +32,7 @@ export default ActiveCity;
 // import { connect } from 'react-redux';
 
 // const ActiveCity = (props) => {
-//   if (!props.activeCity) {
-//     return (
-//       <div className="active-city">
-//         <p>Select a city...</p>
-//       </div>
-//     );
-//   }
+
 
 //   const url = `https://kitt.lewagon.com/placeholder/cities/${props.activeCity.slug}`;
 
