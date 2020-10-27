@@ -35,8 +35,9 @@ class App extends Component {
     super(props);
 
     this.state = {
-      cities,
-      selectedCity: null,
+      // cities,
+      // selectedCity: null,
+      // activeCity: null,
     };
   }
   
@@ -44,8 +45,6 @@ class App extends Component {
     this.setState({
       selectedCity: city,
     });
-    console.log(this.state.selectedCity);
-    console.log(activeCity);
   }
 
   
